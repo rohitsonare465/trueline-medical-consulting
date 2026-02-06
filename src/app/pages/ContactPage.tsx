@@ -6,7 +6,6 @@ export function ContactPage() {
     name: '',
     email: '',
     phone: '',
-    firm: '',
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -26,7 +25,7 @@ export function ContactPage() {
     // Reset after showing success message
     setTimeout(() => {
       setIsSubmitted(false);
-      setFormData({ name: '', email: '', phone: '', firm: '', message: '' });
+      setFormData({ name: '', email: '', phone: '', message: '' });
     }, 3000);
   };
 
@@ -214,49 +213,9 @@ export function ContactPage() {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       className="w-full px-0 py-4 border-0 border-b-2 border-gray-200 focus:outline-none focus:border-[#C3993F] bg-transparent transition-all duration-300"
-                      placeholder="Attorney Name"
+                      placeholder="Type here"
                       style={{ fontFamily: 'Inter, sans-serif' }}
                       whileFocus={{ scale: 1.01 }}
-                    />
-                    <motion.div
-                      className="h-0.5 bg-gradient-to-r from-[#C3993F] to-[#E0C27A] origin-left scale-x-0 group-focus-within:scale-x-100 transition-transform duration-300"
-                    />
-                  </div>
-
-                  <div className="group">
-                    <label htmlFor="firm" className="block text-gray-700 mb-3 tracking-wide text-xs uppercase" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, letterSpacing: '2px' }}>
-                      Law Firm
-                    </label>
-                    <input
-                      type="text"
-                      id="firm"
-                      required
-                      value={formData.firm}
-                      onChange={(e) => setFormData({ ...formData, firm: e.target.value })}
-                      className="w-full px-0 py-4 border-0 border-b-2 border-gray-200 focus:outline-none focus:border-[#C3993F] bg-transparent transition-all duration-300"
-                      placeholder="Firm Name"
-                      style={{ fontFamily: 'Inter, sans-serif' }}
-                    />
-                    <motion.div
-                      className="h-0.5 bg-gradient-to-r from-[#C3993F] to-[#E0C27A] origin-left scale-x-0 group-focus-within:scale-x-100 transition-transform duration-300"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div className="group">
-                    <label htmlFor="email" className="block text-gray-700 mb-3 tracking-wide text-xs uppercase" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, letterSpacing: '2px' }}>
-                      Email Address
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      required
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-0 py-4 border-0 border-b-2 border-gray-200 focus:outline-none focus:border-[#C3993F] bg-transparent transition-all duration-300"
-                      placeholder="attorney@lawfirm.com"
-                      style={{ fontFamily: 'Inter, sans-serif' }}
                     />
                     <motion.div
                       className="h-0.5 bg-gradient-to-r from-[#C3993F] to-[#E0C27A] origin-left scale-x-0 group-focus-within:scale-x-100 transition-transform duration-300"
@@ -274,13 +233,32 @@ export function ContactPage() {
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       className="w-full px-0 py-4 border-0 border-b-2 border-gray-200 focus:outline-none focus:border-[#C3993F] bg-transparent transition-all duration-300"
-                      placeholder="(555) 123-4567"
+                      placeholder="Type here"
                       style={{ fontFamily: 'Inter, sans-serif' }}
                     />
                     <motion.div
                       className="h-0.5 bg-gradient-to-r from-[#C3993F] to-[#E0C27A] origin-left scale-x-0 group-focus-within:scale-x-100 transition-transform duration-300"
                     />
                   </div>
+                </div>
+
+                <div className="group">
+                  <label htmlFor="email" className="block text-gray-700 mb-3 tracking-wide text-xs uppercase" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, letterSpacing: '2px' }}>
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    required
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    className="w-full px-0 py-4 border-0 border-b-2 border-gray-200 focus:outline-none focus:border-[#C3993F] bg-transparent transition-all duration-300"
+                    placeholder="Type here"
+                    style={{ fontFamily: 'Inter, sans-serif' }}
+                  />
+                  <motion.div
+                    className="h-0.5 bg-gradient-to-r from-[#C3993F] to-[#E0C27A] origin-left scale-x-0 group-focus-within:scale-x-100 transition-transform duration-300"
+                  />
                 </div>
 
                 <div className="group">
@@ -294,7 +272,7 @@ export function ContactPage() {
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     className="w-full px-0 py-4 border-0 border-b-2 border-gray-200 focus:outline-none focus:border-[#C3993F] bg-transparent resize-none transition-all duration-300"
-                    placeholder="Brief overview of case type and consultation needs..."
+                    placeholder="Type here"
                     style={{ fontFamily: 'Inter, sans-serif' }}
                   />
                   <motion.div
@@ -471,7 +449,7 @@ export function ContactPage() {
                     Call Us
                   </span>
                   <span className="text-[#253749] font-semibold text-lg group-hover:text-[#C3993F] transition-colors duration-300" style={{ fontFamily: 'Inter, sans-serif' }}>
-                    (281) 845-6224
+                    +1 (281) 845-6224
                   </span>
                 </div>
               </motion.a>

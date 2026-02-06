@@ -2,6 +2,7 @@ import { motion } from 'motion/react';
 import { useRef } from 'react';
 import { useInView } from 'motion/react';
 import { ImageWithFallback } from '@/app/components/figma/ImageWithFallback';
+import founderImage from '@/assets/founder.jpeg';
 
 interface AboutPageProps {
   onNavigate?: (page: string) => void;
@@ -135,9 +136,9 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
                   className="overflow-hidden shadow-2xl shadow-gray-400/30 rounded-sm"
                 >
                   <ImageWithFallback
-                    src="https://images.unsplash.com/photo-1736939678218-bd648b5ef3bb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjB3b21hbiUyMGhlYWx0aGNhcmUlMjBleGVjdXRpdmUlMjBwb3J0cmFpdHxlbnwxfHx8fDE3NzAwMjY1OTJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                    src={founderImage}
                     alt="Khaleela Umheni, Founder and Principal Legal Nurse Consultant"
-                    className="w-full h-[550px] object-cover hover:scale-105 transition-transform duration-700"
+                    className="w-full h-[550px] object-cover object-top hover:scale-105 transition-transform duration-700"
                   />
                   {/* Gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-[#253749]/30 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500" />
