@@ -283,21 +283,26 @@ export function ServicesPage({ onNavigate }: ServicesPageProps) {
             </p>
             <motion.button
               onClick={() => onNavigate?.('contact')}
-              className="group relative px-12 py-5 bg-white text-[#253749] tracking-widest overflow-hidden shadow-xl rounded-sm"
+              className="group relative px-12 py-5 bg-white tracking-widest overflow-hidden shadow-xl rounded-sm"
               style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: '13px', letterSpacing: '3px' }}
               whileHover={{ scale: 1.03, boxShadow: '0 30px 60px -15px rgba(0, 0, 0, 0.4)' }}
               whileTap={{ scale: 0.98 }}
             >
-              <span className="relative z-10 group-hover:text-white transition-colors duration-500">SCHEDULE A CONSULTATION</span>
+              <span
+                className="relative z-20 group-hover:text-white transition-colors duration-500"
+                style={{ color: '#253749' }}
+              >
+                SCHEDULE A CONSULTATION
+              </span>
               <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-[#C3993F] via-[#D39012] to-[#8F6B1D]"
+                className="absolute inset-0 bg-gradient-to-r from-[#C3993F] via-[#D39012] to-[#8F6B1D] z-10"
                 initial={{ x: '-100%' }}
                 whileHover={{ x: 0 }}
                 transition={{ duration: 0.4 }}
               />
               {/* Shine effect */}
               <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12"
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 z-10"
                 initial={{ x: '-200%' }}
                 whileHover={{ x: '200%' }}
                 transition={{ duration: 0.8, delay: 0.2 }}

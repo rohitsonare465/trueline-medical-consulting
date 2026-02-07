@@ -1,5 +1,11 @@
 import { motion } from 'motion/react';
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
+
+// EmailJS Configuration - You'll need to set these up at https://www.emailjs.com/
+const EMAILJS_SERVICE_ID = 'service_trueline';
+const EMAILJS_TEMPLATE_ID = 'template_inquiry';
+const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY'; // Replace with your EmailJS public key
 
 export function ContactPage() {
   const [formData, setFormData] = useState({
@@ -10,23 +16,47 @@ export function ContactPage() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitError(false);
 
-    // Simulate submission delay
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    try {
+      // Send email via EmailJS
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+          to_email: 'Khaleela@truelinemedicallegal.com',
+        },
+        EMAILJS_PUBLIC_KEY
+      );
 
-    console.log('Form submitted:', formData);
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+      console.log('Form submitted successfully:', formData);
+      setIsSubmitting(false);
+      setIsSubmitted(true);
 
-    // Reset after showing success message
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({ name: '', email: '', phone: '', message: '' });
-    }, 3000);
+      // Reset after showing success message
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setFormData({ name: '', email: '', phone: '', message: '' });
+      }, 3000);
+    } catch (error) {
+      console.error('Failed to send email:', error);
+      setIsSubmitting(false);
+      setSubmitError(true);
+
+      // Reset error state after 5 seconds
+      setTimeout(() => {
+        setSubmitError(false);
+      }, 5000);
+    }
   };
 
   return (
@@ -201,6 +231,21 @@ export function ContactPage() {
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-8 relative z-10">
+                {/* Error Message */}
+                {submitError && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-center"
+                    style={{ fontFamily: 'Inter, sans-serif' }}
+                  >
+                    Failed to send your message. Please try again or contact us directly at{' '}
+                    <a href="mailto:Khaleela@truelinemedicallegal.com" className="font-semibold underline">
+                      Khaleela@truelinemedicallegal.com
+                    </a>
+                  </motion.div>
+                )}
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="group">
                     <label htmlFor="name" className="block text-gray-700 mb-3 tracking-wide text-xs uppercase" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, letterSpacing: '2px' }}>

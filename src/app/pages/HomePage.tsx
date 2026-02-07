@@ -158,21 +158,26 @@ export function HomePage({ onNavigate }: HomePageProps) {
           >
             <motion.button
               onClick={() => onNavigate('contact')}
-              className="group relative w-full sm:w-auto px-6 sm:px-10 py-3.5 sm:py-4 bg-white text-[#253749] tracking-widest overflow-hidden rounded-sm shadow-xl shadow-black/20"
+              className="group relative w-full sm:w-auto px-6 sm:px-10 py-3.5 sm:py-4 bg-white tracking-widest overflow-hidden rounded-sm shadow-xl shadow-black/20"
               style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: '11px', letterSpacing: '1.5px' }}
               whileHover={{ scale: 1.03, boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)' }}
               whileTap={{ scale: 0.98 }}
             >
-              <span className="relative z-10 group-hover:text-white transition-colors duration-500">REQUEST A CONSULTATION</span>
+              <span
+                className="relative z-20 group-hover:text-white transition-colors duration-500"
+                style={{ color: '#253749' }}
+              >
+                REQUEST A CONSULTATION
+              </span>
               <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-[#C3993F] via-[#D39012] to-[#8F6B1D]"
+                className="absolute inset-0 bg-gradient-to-r from-[#C3993F] via-[#D39012] to-[#8F6B1D] z-10"
                 initial={{ x: '-100%' }}
                 whileHover={{ x: 0 }}
                 transition={{ duration: 0.4 }}
               />
               {/* Shine effect */}
               <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12"
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 z-10"
                 initial={{ x: '-200%' }}
                 whileHover={{ x: '200%' }}
                 transition={{ duration: 0.8, delay: 0.2 }}
@@ -618,14 +623,19 @@ export function HomePage({ onNavigate }: HomePageProps) {
             </p>
             <motion.button
               onClick={() => onNavigate('about')}
-              className="group relative w-full sm:w-auto px-8 sm:px-12 py-4 sm:py-5 border-2 border-[#253749] text-[#253749] tracking-widest overflow-hidden rounded-sm"
+              className="group relative w-full sm:w-auto px-8 sm:px-12 py-4 sm:py-5 border-2 border-[#253749] tracking-widest overflow-hidden rounded-sm"
               style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: '11px', letterSpacing: '2px' }}
               whileHover={{ scale: 1.02, boxShadow: '0 20px 40px -15px rgba(37, 55, 73, 0.25)' }}
               whileTap={{ scale: 0.98 }}
             >
-              <span className="relative z-10 group-hover:text-white transition-colors duration-500">MEET OUR TEAM →</span>
+              <span
+                className="relative z-20 group-hover:text-white transition-colors duration-500"
+                style={{ color: '#253749' }}
+              >
+                MEET OUR TEAM →
+              </span>
               <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-[#253749] to-[#293847]"
+                className="absolute inset-0 bg-gradient-to-r from-[#253749] to-[#293847] z-10"
                 initial={{ y: '100%' }}
                 whileHover={{ y: 0 }}
                 transition={{ duration: 0.4 }}

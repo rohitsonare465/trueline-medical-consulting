@@ -116,16 +116,16 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
               whileHover={{ scale: 1.03, boxShadow: '0 15px 35px -10px rgba(37, 55, 73, 0.5)' }}
               whileTap={{ scale: 0.98 }}
             >
-              <span className="relative z-10 group-hover:text-white">GET STARTED</span>
+              <span className="relative z-20 text-white">GET STARTED</span>
               <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-[#C3993F] via-[#D39012] to-[#8F6B1D]"
+                className="absolute inset-0 bg-gradient-to-r from-[#C3993F] via-[#D39012] to-[#8F6B1D] z-10"
                 initial={{ x: '-100%' }}
                 whileHover={{ x: 0 }}
                 transition={{ duration: 0.3 }}
               />
               {/* Shine effect */}
               <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 opacity-0 group-hover:opacity-100"
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 opacity-0 group-hover:opacity-100 z-10"
                 initial={{ x: '-200%' }}
                 whileHover={{ x: '200%' }}
                 transition={{ duration: 0.6, delay: 0.15 }}
