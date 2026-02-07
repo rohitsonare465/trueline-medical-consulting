@@ -51,7 +51,7 @@ jobs:
         run: npm install -g vercel@latest
 
       - name: Deploy to Vercel Production
-        run: vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }}
+        run: vercel deploy --yes --prod --token=${{ secrets.VERCEL_TOKEN }}
 
   # Deploy Preview (for pull requests)
   deploy-preview:
@@ -67,4 +67,4 @@ jobs:
         run: npm install -g vercel@latest
 
       - name: Deploy to Vercel Preview
-        run: vercel deploy --token=${{ secrets.VERCEL_TOKEN }}
+        run: vercel deploy --yes --token=${{ secrets.VERCEL_TOKEN }}
