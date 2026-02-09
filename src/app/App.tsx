@@ -20,6 +20,8 @@ export default function App() {
     setCurrentPage(page);
   };
 
+  
+
   const renderPage = () => {
     switch (currentPage) {
       case 'home':
