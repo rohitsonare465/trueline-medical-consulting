@@ -109,7 +109,7 @@ export function Footer({ onNavigate }: FooterProps) {
                 Khaleela Umheni, MSN, RN, CNOR, NE-BC
               </p>
               <p className="text-gray-600">
-                Owner & Principal Consultant
+                Founder & Principal Legal Nurse Consultant
               </p>
               <motion.a
                 href="mailto:Khaleela@truelinemedicallegal.com"

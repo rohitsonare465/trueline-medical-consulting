@@ -202,7 +202,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
                 className="h-[2px] bg-gradient-to-r from-[#C3993F] to-transparent mb-6"
               />
               <span className="text-[#C3993F] tracking-widest text-sm uppercase" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, letterSpacing: '3px' }}>
-                Founder & Principal Consultant
+                Founder & Principal Legal Nurse Consultant
               </span>
 
               <h2
