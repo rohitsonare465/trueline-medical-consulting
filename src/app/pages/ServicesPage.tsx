@@ -120,9 +120,7 @@ export function ServicesPage({ onNavigate }: ServicesPageProps) {
               className="text-lg md:text-xl text-white/80 leading-relaxed max-w-3xl mx-auto"
               style={{ fontFamily: 'Inter, sans-serif', fontWeight: 300 }}
             >
-              Comprehensive medical-legal expertise tailored to your case requirements.
-              From initial case screening through trial support, we provide the clinical insight
-              attorneys need to build stronger cases.
+              We Offer Expert Medical Record Analysis and Litigation Support by an Experienced Legal Nurse Consultant, designed to help attorneys make informed judgment calls.
             </p>
           </motion.div>
         </div>

@@ -115,9 +115,9 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
               whileHover={{ scale: 1.03, boxShadow: '0 15px 35px -10px rgba(37, 55, 73, 0.5)' }}
               whileTap={{ scale: 0.98 }}
             >
-              <span className="relative z-20 text-white">BOOK A SLOT</span>
+              <span className="relative z-20 text-white">BOOK A CONSULTATION</span>
               <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-[#C3993F] via-[#D39012] to-[#8F6B1D] z-10"
+                className="absolute inset-0 bg-gradient-to-r from -[#C3993F] via-[#D39012] to-[#8F6B1D] z-10"
                 initial={{ x: '-100%' }}
                 whileHover={{ x: 0 }}
                 transition={{ duration: 0.3 }}
