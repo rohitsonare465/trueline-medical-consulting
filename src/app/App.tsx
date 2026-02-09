@@ -6,7 +6,7 @@ import { ServicesPage } from '@/app/pages/ServicesPage';
 import { AboutPage } from '@/app/pages/AboutPage';
 import { ExpertisePage } from '@/app/pages/ExpertisePage';
 import { ContactPage } from '@/app/pages/ContactPage';
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/react"
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState('home');
