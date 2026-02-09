@@ -6,6 +6,7 @@ import { ServicesPage } from '@/app/pages/ServicesPage';
 import { AboutPage } from '@/app/pages/AboutPage';
 import { ExpertisePage } from '@/app/pages/ExpertisePage';
 import { ContactPage } from '@/app/pages/ContactPage';
+import { Analytics } from "@vercel/analytics/next"
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -43,6 +44,7 @@ export default function App() {
         {renderPage()}
       </main>
       <Footer onNavigate={handleNavigate} />
+      <Analytics />
     </div>
   );
 }
