@@ -17,7 +17,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
       description: 'We translate complex medical narratives into clear, actionable intelligence.'
     },
     {
-      title: 'Objective. Thorough. Defensible.',
+      title: 'Objective. Thorough. Justifiable.',
       description: 'Every opinion is rooted in evidence and clinical accountability.'
     }
   ];
@@ -25,8 +25,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
   const services = [
     { title: 'Medical Record Review', description: 'Comprehensive analysis to uncover what matters most.', num: '01' },
     { title: 'Expert Witness Testimony', description: 'Credible, courtroom-ready clinical perspective.', num: '02' },
-    { title: 'Life Care Planning', description: 'Detailed projections for long-term patient needs.', num: '03' },
-    { title: 'Case Merit Evaluation', description: 'Early insight to guide your strategic decisions.', num: '04' }
+
+    { title: 'Case Merit Evaluation', description: 'Early insight to guide your strategic decisions.', num: '03' }
   ];
 
   return (
@@ -494,7 +494,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {services.map((service, index) => (
               <motion.div
                 key={index}

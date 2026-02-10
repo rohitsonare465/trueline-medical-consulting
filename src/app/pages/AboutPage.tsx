@@ -358,8 +358,8 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
 
             <div className="space-y-6">
               <PhilosophyCard
-                title="Tailored Analytical Reports"
-                content="We provide analytical reports tailored to each case's needs, from early intake screening through trial support. Our work goes beyond organizing records—we analyze medical facts in the context of liability, causation, and damages."
+                title="Analytical Reports"
+                content="We provide analytical reports to each case's needs, from early intake screening through trial support. Our work goes beyond organizing records—we analyze medical facts in the context of liability, causation, and damages."
                 delay={0.1}
               />
               <PhilosophyCard

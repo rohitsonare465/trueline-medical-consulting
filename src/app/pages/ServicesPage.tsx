@@ -28,11 +28,7 @@ export function ServicesPage({ onNavigate }: ServicesPageProps) {
       description: 'Assistance identifying appropriate medical experts and organizing records to support efficient expert review.',
       num: '04'
     },
-    {
-      title: 'Litigation and Trial Support',
-      description: 'Medical legal support to assist attorneys during depositions, trial preparation, and related proceedings.',
-      num: '05'
-    },
+
     {
       title: 'Medical Record Audit Trails and Metadata Review',
       description: 'Review of medical record metadata and documentation history to assess timing, edits, and documentation patterns.',
@@ -271,7 +267,7 @@ export function ServicesPage({ onNavigate }: ServicesPageProps) {
               className="text-4xl md:text-5xl text-white mb-6"
               style={{ fontFamily: 'Cormorant Garamond, serif', fontWeight: 500 }}
             >
-              Ready to Strengthen Your Case?
+             Let's work together to advance your case analysis with focused clinical insight.
             </h2>
             <p
               className="text-lg md:text-xl text-white/80 mb-10 leading-relaxed max-w-2xl mx-auto"
