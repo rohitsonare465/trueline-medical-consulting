@@ -28,6 +28,8 @@ export function ContactPage() {
     if (!form.current) return;
 
     try {
+      console.log('Sending form with data:', Object.fromEntries(new FormData(form.current).entries()));
+
       // Send email via EmailJS
       await emailjs.sendForm(
         EMAILJS_SERVICE_ID,
@@ -228,7 +230,7 @@ export function ContactPage() {
                 </p>
               </motion.div>
             ) : (
-              <form ref={form} onSubmit={handleSubmit} className="space-y-8 relative z-10">
+              <form id="contact-form" ref={form} onSubmit={handleSubmit} className="space-y-8 relative z-10">
                 {/* Error Message */}
                 {submitError && (
                   <motion.div
@@ -252,7 +254,7 @@ export function ContactPage() {
                     <motion.input
                       type="text"
                       id="name"
-                      name="user_name"
+                      name="name"
                       required
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -273,7 +275,7 @@ export function ContactPage() {
                     <input
                       type="tel"
                       id="phone"
-                      name="phone_number"
+                      name="phone"
                       required
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
@@ -294,7 +296,7 @@ export function ContactPage() {
                   <input
                     type="email"
                     id="email"
-                    name="user_email"
+                    name="email"
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
