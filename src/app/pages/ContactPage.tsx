@@ -1,11 +1,11 @@
 import { motion } from 'motion/react';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 
 // EmailJS Configuration - You'll need to set these up at https://www.emailjs.com/
-const EMAILJS_SERVICE_ID = 'service_trueline';
-const EMAILJS_TEMPLATE_ID = 'template_inquiry';
-const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY'; // Replace with your EmailJS public key
+const EMAILJS_SERVICE_ID = 'service_28qcxgl';
+const EMAILJS_TEMPLATE_ID = 'template_6vqblsm';
+const EMAILJS_PUBLIC_KEY = 'e1pGJpd_yhY5ys2qo';
 
 export function ContactPage() {
   const [formData, setFormData] = useState({
@@ -18,23 +18,21 @@ export function ContactPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState(false);
 
+  const form = useRef<HTMLFormElement>(null);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitError(false);
 
+    if (!form.current) return;
+
     try {
       // Send email via EmailJS
-      await emailjs.send(
+      await emailjs.sendForm(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          phone: formData.phone,
-          message: formData.message,
-          to_email: 'Khaleela@truelinemedicallegal.com',
-        },
+        form.current,
         EMAILJS_PUBLIC_KEY
       );
 
@@ -230,7 +228,7 @@ export function ContactPage() {
                 </p>
               </motion.div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-8 relative z-10">
+              <form ref={form} onSubmit={handleSubmit} className="space-y-8 relative z-10">
                 {/* Error Message */}
                 {submitError && (
                   <motion.div
@@ -254,6 +252,7 @@ export function ContactPage() {
                     <motion.input
                       type="text"
                       id="name"
+                      name="user_name"
                       required
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -274,6 +273,7 @@ export function ContactPage() {
                     <input
                       type="tel"
                       id="phone"
+                      name="phone_number"
                       required
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
@@ -294,6 +294,7 @@ export function ContactPage() {
                   <input
                     type="email"
                     id="email"
+                    name="user_email"
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -312,6 +313,7 @@ export function ContactPage() {
                   </label>
                   <textarea
                     id="message"
+                    name="message"
                     required
                     rows={5}
                     value={formData.message}
