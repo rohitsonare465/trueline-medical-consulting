@@ -117,7 +117,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
             >
               <span className="relative z-20 text-white">BOOK A CONSULTATION</span>
               <motion.div
-                className="absolute inset-0 bg-gradient-to-r from -[#C3993F] via-[#D39012] to-[#8F6B1D] z-10"
+                className="absolute inset-0 bg-gradient-to-r from-[#C3993F] via-[#D39012] to-[#8F6B1D] z-10"
                 initial={{ x: '-100%' }}
                 whileHover={{ x: 0 }}
                 transition={{ duration: 0.3 }}
@@ -135,7 +135,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
           {/* Mobile Menu Button - Enhanced */}
           <motion.button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden relative w-11 h-11 flex items-center justify-center rounded-xl bg-gradient-to-br from-gray-50 to-gray-100 hover:from-gray-100 hover:to-gray-150 transition-all duration-300 shadow-sm"
+            className="lg:hidden relative w-11 h-11 flex items-center justify-center rounded-xl bg-gradient-to-br from-gray-50 to-gray-100 hover:from-gray-100 hover:to-gray-200 transition-all duration-300 shadow-sm"
             whileTap={{ scale: 0.95 }}
             whileHover={{ boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }}
           >
